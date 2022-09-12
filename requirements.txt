@@ -13,7 +13,6 @@ Beaker==1.11.0
 beautifulsoup4==4.11.1
 blinker==1.4
 Brotli==1.0.9
-btrfsutil==5.18.1
 CacheControl==0.12.6
 cachetools==4.2.2
 caffeine-ng==4.0.2
