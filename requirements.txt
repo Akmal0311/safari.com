@@ -77,7 +77,6 @@ google-auth-httplib2==0.1.0
 googleapis-common-protos==1.56.3
 greenlet==1.1.2
 gssapi==1.7.3
-gufw==22.4.0
 gunicorn==20.1.0
 html5lib==1.1
 httplib2==0.20.4
