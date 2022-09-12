@@ -1,0 +1,1 @@
+web gunicorn safari.wsgi:application --log-file -
