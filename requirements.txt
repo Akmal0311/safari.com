@@ -104,7 +104,6 @@ mccabe==0.7.0
 monotonic==1.6
 more-itertools==8.13.0
 msgpack==1.0.3
-netsnmp-python==1.0a1
 npyscreen==4.10.5
 nspektr==0.4.0
 oauth2client==4.1.3
