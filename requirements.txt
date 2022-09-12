@@ -166,7 +166,6 @@ tzlocal==4.2
 ueberzug==18.1.9
 uritemplate==3.0.1
 urllib3==1.26.12
-validate==5.1.0.dev0
 validate-pyproject==0.9
 virtualenv==20.16.2
 virtualenv-clone==0.5.7
