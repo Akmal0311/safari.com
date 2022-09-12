@@ -94,7 +94,6 @@ jedi==0.18.1
 Jinja2==2.11.3
 lazy-object-proxy==1.7.1
 ldap3==2.9
-LibAppArmor==3.0.7
 lit==14.0.6.dev0
 louis==3.22.0
 Mako==1.1.6
