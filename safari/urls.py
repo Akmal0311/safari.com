@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from accounts.views import index
+from django.views.generic import TemplateView
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -34,6 +35,11 @@ schema_view = get_schema_view(
     permission_classes=(permissions.AllowAny,),
 )
 
+
+class Home(TemplateView):
+    template_name = 'home.html'
+
+
 urlpatterns = [
 
     re_path(r'^doc(?P<format>\.json|\.yaml)$',schema_view.without_ui(cache_timeout=0), name='schema-json'),
@@ -44,4 +50,9 @@ urlpatterns = [
     path('auth/', include('accounts.urls')),
     path('', index, name="index"),
     path('product/', include('product.urls')),
+
+    path('accounts/', include('allauth.urls')),
+
+    path('', Home.as_view(), name='home'),
 ]
+
