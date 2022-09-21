@@ -7,7 +7,6 @@ from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
 from django.template import loader
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
 from product.models import *
 
 
@@ -95,7 +94,7 @@ class ChangePasswordView(generics.UpdateAPIView):
     model = User
 
     def get(self, queryset=None):
-        obj= self.request.user
+        obj = self.request.user
         return obj
 
     def update(self, request, *args, **kwargs):
@@ -151,18 +150,18 @@ class UserFavoritesDeleteView(APIView):
     serializer_class = UserFavoritesSerializer
 
     def delete(self, request, pk):
-        uf = UserFavorites.objects.get(pk=pk)
+        like = UserFavorites.objects.get(pk=pk)
 
-        if not uf:
-            return Response(data="like topilmadi")
+        if not like:
+            return Response(data="like topilmadi", status=status.HTTP_404_NOT_FOUND)
 
-        product = Product.objects.get(id=uf.product.id)
+        product = Product.objects.get(id=like.product.id)
 
         product.like -= 1
 
         product.save()
 
-        uf.delete()
+        like.delete()
 
         return Response(data='successfully', status=status.HTTP_200_OK)
 

@@ -25,13 +25,11 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserLoginSerializer(serializers.ModelSerializer):
-    # to accept either username or email
     username = serializers.CharField()
     password = serializers.CharField()
     token = serializers.CharField(required=False, read_only=True)
 
     def validate(self, data):
-        # user,email,password validator
         username = data.get("username", None)
         password = data.get("password", None)
         if not username and not password:

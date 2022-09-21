@@ -10,7 +10,7 @@ class ProductView(generics.CreateAPIView):
     serializer_class = ProductSerializer
 
 
-class ProductUDView(generics.RetrieveUpdateDestroyAPIView):
+class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product
     serializer_class = ProductSerializer
 
@@ -19,7 +19,7 @@ class ProductListView(generics.ListAPIView):
     queryset = Product
     serializer_class = ProductSerializer
 
-    def get(self, request, page):
+    def get(self, request, *args, **kwargs):
 
         products = Product.objects.all()
 
