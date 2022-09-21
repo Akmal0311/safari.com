@@ -53,6 +53,6 @@ urlpatterns = [
 
     path('accounts/', include('allauth.urls')),
 
-    path('', Home.as_view(), name='home'),
+    path('home/', Home.as_view(), name='home'),
 ]
 
